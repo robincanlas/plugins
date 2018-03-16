@@ -1,0 +1,40 @@
+script(type='text/ng-template' id='pagination')
+	//-***  ball is the Factory Name ***//
+	span.bin-pagination-wrapper(data-ng-show="ball.paginationType === 'ballnews' || ball.paginationType === 'results'")
+		span.bin-pagination-previous-next
+			span.bin-relative-block-wh-100
+				span.left.bin-balls-previous-page-left
+					span.bin-relative-block-wh-100
+						span.bin-balls-page-wrapper
+							span.bin-news-previous-page-wrapper.bin-cursor-pointer(data-ng-class='{\"bin-cursor-default\": ball.lastPage - ball.staticLastPage === 0}' data-ng-click='ball.jumpToPreviousPages(ball.currentPage - 1)' )
+								span.bin-news-backward-wrapper
+									span.fa.fa-backward.fa-lg(data-ng-class='{\"bin-news-backward-disable\": ball.lastPage - ball.staticLastPage === 0, \"bin-news-backward-enable\":ball.lastPage - ball.staticLastPage !== 0}')
+				span.left.bin-balls-previous-page-right
+					span.left.bin-balls-previous-page
+						span.bin-balls-previous-page-text.bin-cursor-pointer(data-ng-click='ball.changePage(ball.currentPage - 1)' data-ng-class='{\"bin-balls-page-text-disable\": ball.currentPage == 1}') SEBELUMNYA
+		span.bin-pagination-pages
+			span.bin-balls-group-pages
+				span.bin-balls-firstpage.bin-width-9(style='cursor: pointer;', data-ng-click='ball.jumpToFirstPage(1)', data-ng-class='{\"bin-ball-cloak\":ball.lastPage - ball.staticLastPage === 0}') 
+					span.bin-balls-one 1 
+
+				span.bin-tututuldok-left.bin-width-9(data-ng-class='{\"bin-ball-cloak\":ball.lastPage - ball.staticLastPage === 0}') 
+					span(style="position: relative; top: 1vmin;" ) . . . 
+
+				span.bin-balls-pages.bin-width-9(style='cursor: pointer;' data-ng-repeat='page in ball.pages track by $index' data-ng-class='{\"bin-active-page\": ball.currentPage == page}', data-ng-click='ball.changePage(page)')
+					span.bin-balls-page() {{page}}
+
+				span.bin-tututuldok-right.bin-width-9(data-ng-class='{\"bin-ball-cloak\":ball.showLastPage == false}') 
+					span(style="position: relative; top: 1vmin;") . . . 
+
+				span.bin-balls-last-page.bin-width-9(style='cursor: pointer;', data-ng-click='ball.jumpToLastPage(ball.maxPage)', data-ng-class='{\"bin-ball-cloak\":ball.showLastPage == false}') 
+					span.bin-balls-last {{ball.maxPage}} 
+					
+		span.bin-pagination-previous-next
+			span.bin-relative-block-wh-100
+				span.left.bin-balls-next-page-left
+					span.left.bin-balls-next-page 
+						span.bin-balls-next-page-text.bin-cursor-pointer(data-ng-click='ball.changePage(ball.currentPage + 1)', data-ng-class='{\"bin-balls-page-text-disable\": ball.currentPage == ball.maxPage}') SELANJUTNYA
+				span.left.bin-balls-next-page-right
+					span.bin-news-right-arrows-wrrapper.bin-cursor-pointer(data-ng-click='ball.jumpToNextPages(ball.currentPage + 1)', data-ng-class='{\"bin-pointer-events-none\": ball.showLastPage !== true}') 
+						span.bin-news-forward-wrapper.bin-relative-block-wh-100
+							span.fa.fa-forward.fa-lg(data-ng-class='{\"bin-news-backward-disable\": ball.showLastPage !== true, \"bin-news-backward-enable\":ball.showLastPage == true}')
