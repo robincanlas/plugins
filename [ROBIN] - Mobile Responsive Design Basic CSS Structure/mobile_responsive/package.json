@@ -1,0 +1,15 @@
+{
+  "name": "mobile_responsive",
+  "version": "1.0.0",
+  "description": "mobile responsive design",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Kristoffer Robin Canlas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4"
+  }
+}

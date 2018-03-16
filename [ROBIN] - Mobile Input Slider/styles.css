@@ -1,0 +1,38 @@
+body{
+	background: gray;
+}
+
+#canvas{
+	border: 1px solid black;
+}
+
+#second-canvas{
+	border: 1px solid black;
+	-webkit-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+.second-canvas-wrapper{
+	position: absolute;
+    top: 31vmin;
+    left: 49vmin;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.canvas-wrapper{
+	position: absolute;
+    top: 16vmin;
+    left: 10vmin;
+	/*FOR PORTRAIT MODE*/
+/*    transform: rotate(-90deg);
+    transform-origin: 50% 50%;*/
+}
+
+.pos-abs{
+    position: relative;
+	display: block;	
+}

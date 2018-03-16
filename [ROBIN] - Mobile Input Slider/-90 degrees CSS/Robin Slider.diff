@@ -1,0 +1,24 @@
+--- C:/Users/john.bay/Documents/23M Projects/_PROJECTS/[ROBIN] - Mobile Input Slider/scripts.js	Lun Peb 12 15:44:30 2018
++++ C:/Users/john.bay/Documents/23M Projects/_PROJECTS/[ROBIN] - Mobile Input Slider/script -90 degrees.js	Mier Peb 14 10:41:54 2018
+@@ -59,9 +59,10 @@ animatedRect.graphics.command.w = initialXPos;
+ 
+ function handleMove(e){
+ 	var xPos;
+-	if(window.innerWidth > window.innerHeight){
++	if(window.innerWidth < window.innerHeight){
+ 		// LANDSCAPE MODE
+-		xPos = e.stageX - constant.containerX
++		var maxSliderHeight = constant.maxX + container.y - container.x;
++		xPos = maxSliderHeight-(e.stageX - constant.container);
+ 		if(xPos < constant.minX){
+ 			xPos = constant.minX
+ 		}else if(xPos > constant.maxX){
+@@ -71,7 +72,7 @@ function handleMove(e){
+ 		// PORTRAIT MODE
+ 		// 2.08 = canvas_width/canvas_height
+ 		var maxSliderHeight = constant.maxX + container.y - container.x;
+-		xPos = -(e.stageY * 2.08) + maxSliderHeight;
++		xPos = (-(e.stageY * (stage.canvas.width/stage.canvas.height)) + maxSliderHeight) + constant.container;
+ 		if(xPos < constant.minX){
+ 			xPos = constant.minX
+ 		}else if(xPos > constant.maxX){

@@ -1,0 +1,16 @@
+html
+	head
+		title ButtMobile
+		link(rel="stylesheet" href='/css/main.css')
+		meta(name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1")
+
+	body
+		span.main-wrapper
+			span.row#row
+				span#layers
+					canvas#canvas(width='1000', height='700')
+					span#chairs
+				span.controlpanel CONTROLPANEL
+
+		script(src='/plugins/vendor-mobile-table.js')
+		script(src='/scripts/main.js')
